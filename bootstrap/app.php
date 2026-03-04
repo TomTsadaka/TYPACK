@@ -8,10 +8,11 @@ use Illuminate\Auth\AuthenticationException;
 use App\Providers\AuthServiceProvider;
 
 return Application::configure(basePath: dirname(__DIR__))
-    ->withEvents([
-        // Suppress Pail provider errors in Docker
-        \Laravel\Pail\PailServiceProvider::class => false,
-    ])
+    ->withEvents(
+        class_exists('Laravel\Pail\PailServiceProvider', false)
+            ? ['Laravel\Pail\PailServiceProvider' => false]
+            : []
+    )
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
         api: __DIR__.'/../routes/api.php',
