@@ -1,0 +1,16 @@
+/node_modules
+/vendor
+.env
+.env.*
+!.env.example
+.git
+.idea
+.history
+*.log
+storage/logs/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+tests
+phpunit.xml
+.phpunit.result.cache

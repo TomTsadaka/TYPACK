@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "buildCommand": "npm ci && npm run build",
+  "outputDirectory": "public",
+  "env": {
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "SESSION_DRIVER": "cookie",
+    "CACHE_STORE": "array",
+    "QUEUE_CONNECTION": "sync",
+    "LOG_CHANNEL": "stderr"
+  },
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.1"
+    }
+  },
+  "routes": [
+    {
+      "src": "/build/(.*)",
+      "dest": "/build/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/robots.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ]
+}

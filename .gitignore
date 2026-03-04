@@ -22,6 +22,7 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+.vercel
 
 # Windows reserved names
 nul
@@ -46,3 +47,5 @@ lpt6
 lpt7
 lpt8
 lpt9
+
+.vercel
