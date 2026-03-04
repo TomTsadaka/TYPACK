@@ -77,7 +77,10 @@
         "laravel": {
             "dont-discover": [
                 "barryvdh/laravel-debugbar",
-                "BladeUI\\Heroicons\\BladeHeroiconsServiceProvider"
+                "BladeUI\\Heroicons\\BladeHeroiconsServiceProvider",
+                "laravel/pail",
+                "laravel/sail",
+                "nunomaduro/collision"
             ]
         }
     },
