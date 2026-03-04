@@ -1,0 +1,20 @@
+{
+    "Email": "אימייל",
+    "Password": "סיסמה",
+    "Name": "שם",
+    "Remember me": "זכור אותי",
+    "Log in": "התחבר",
+    "Register": "הרשמה",
+    "Confirm Password": "אימות סיסמה",
+    "Forgot your password?": "שכחת סיסמה?",
+    "Don't have an account?": "אין לך חשבון?",
+    "Already have an account?": "כבר יש לך חשבון?",
+    "Dashboard": "לוח בקרה",
+    "Profile": "פרופיל",
+    "Log Out": "התנתק",
+    "Back to home": "חזרה לדף הבית",
+    "You're logged in!": "התחברת בהצלחה!",
+    "Language": "שפה",
+    "English": "אנגלית",
+    "Hebrew": "עברית"
+}

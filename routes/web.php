@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/locale/{locale}', function (string $locale) {
+    $available = array_keys(config('locales.available', ['en' => [], 'he' => []]));
+    if (! in_array($locale, $available, true)) {
+        abort(400, 'Invalid locale');
+    }
+    session(['locale' => $locale]);
+    return redirect()->back();
+})->name('locale.switch');
+
 Route::get('/', function () {
     return redirect()->route('login');
 });
