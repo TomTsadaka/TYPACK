@@ -12,7 +12,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Vercel: ensure view binding exists before exception handler runs (serverless can miss deferred provider)
+        if (getenv('VERCEL') && ! $this->app->bound('view')) {
+            (new \Illuminate\View\ViewServiceProvider($this->app))->register();
+        }
     }
 
     /**
