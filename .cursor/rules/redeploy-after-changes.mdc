@@ -1,0 +1,19 @@
+---
+description: After making code changes, immediately commit and push to trigger redeploy
+alwaysApply: true
+---
+
+# Redeploy After Changes
+
+When you make any code or config changes to this project:
+
+1. **Commit** all modified and new files with a clear message describing the change.
+2. **Push** to the remote (e.g. `typack/master`) to trigger the Vercel redeploy.
+
+Do this in the same turn as the edits—do not leave "you can redeploy" or "run git push" for the user. Run the git commands yourself:
+
+- `git add` the changed files (or `git add -A` for all)
+- `git commit -m "Brief description of change"`
+- `git push`
+
+Skip redeploy only if the user explicitly asks you not to push, or if no files were actually changed.
