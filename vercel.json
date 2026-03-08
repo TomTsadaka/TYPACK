@@ -19,7 +19,8 @@
     "DB_CONNECTION": "sqlite",
     "DB_DATABASE": ":memory:",
     "VIEW_COMPILED_PATH": "/tmp/views",
-    "APP_PACKAGES_CACHE": "/tmp/bootstrap-cache/packages.php"
+    "APP_PACKAGES_CACHE": "/tmp/bootstrap-cache/packages.php",
+    "CORS_ORIGINS": "https://dream-pack-store.vercel.app,https://typack.vercel.app,http://localhost:3000"
   },
   "functions": {
     "api/index.php": {

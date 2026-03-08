@@ -19,11 +19,11 @@ return [
 
     'allowed_methods' => ['*'],
 
-    // local
-    // 'allowed_origins' => ['http://localhost:3000'], /* Change in production or local */
-
-    // Staging
-    'allowed_origins' => ['https://dream-pack-store.vercel.app'],
+    /*
+    | Allowed origins for frontend (storefront) and same-origin.
+    | Comma-separated list, e.g. https://dream-pack-store.vercel.app,https://typack.vercel.app,http://localhost:3000
+    */
+    'allowed_origins' => array_filter(array_map('trim', explode(',', env('CORS_ORIGINS', 'https://dream-pack-store.vercel.app,https://typack.vercel.app,http://localhost:3000')))),
 
     'allowed_origins_patterns' => [],
 
