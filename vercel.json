@@ -5,13 +5,17 @@
   "outputDirectory": "public",
   "env": {
     "COMPOSER_MEMORY_LIMIT": "-1",
+    "APP_NAME": "TYPACK",
     "APP_ENV": "production",
-    "APP_DEBUG": "true",
+    "APP_DEBUG": "false",
+    "APP_KEY": "base64:tJQioATixVcBm0EE+YSyUhFHYkNRJgKNArpKYNvz06g=",
     "VERCEL_DEBUG": "1",
     "SESSION_DRIVER": "cookie",
+    "SESSION_SECURE_COOKIE": "true",
     "CACHE_STORE": "array",
     "QUEUE_CONNECTION": "sync",
     "LOG_CHANNEL": "stderr",
+    "LOG_LEVEL": "warning",
     "DB_CONNECTION": "sqlite",
     "DB_DATABASE": ":memory:",
     "VIEW_COMPILED_PATH": "/tmp/views"
