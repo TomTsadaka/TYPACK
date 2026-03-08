@@ -1,13 +1,16 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Application as BaseApplication;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\AuthenticationException;
 use App\Providers\AuthServiceProvider;
 
-return Application::configure(basePath: dirname(__DIR__))
+// Use custom Application on Vercel so bootstrap/cache can point to writable /tmp
+$applicationClass = getenv('VERCEL') ? \App\Application::class : BaseApplication::class;
+
+return $applicationClass::configure(basePath: dirname(__DIR__))
     ->withEvents(
         class_exists('Laravel\Pail\PailServiceProvider', false)
             ? ['Laravel\Pail\PailServiceProvider' => false]

@@ -18,7 +18,8 @@
     "LOG_LEVEL": "warning",
     "DB_CONNECTION": "sqlite",
     "DB_DATABASE": ":memory:",
-    "VIEW_COMPILED_PATH": "/tmp/views"
+    "VIEW_COMPILED_PATH": "/tmp/views",
+    "APP_PACKAGES_CACHE": "/tmp/bootstrap-cache/packages.php"
   },
   "functions": {
     "api/index.php": {

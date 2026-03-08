@@ -1,5 +1,16 @@
 <?php
 
+// Vercel: use writable /tmp for Laravel bootstrap cache (filesystem is read-only except /tmp)
+if (getenv('VERCEL')) {
+    $bootstrapCache = '/tmp/bootstrap-cache';
+    if (!is_dir($bootstrapCache)) {
+        @mkdir($bootstrapCache, 0755, true);
+    }
+    putenv('APP_PACKAGES_CACHE=' . $bootstrapCache . '/packages.php');
+    $_ENV['APP_PACKAGES_CACHE'] = $bootstrapCache . '/packages.php';
+    $_SERVER['APP_PACKAGES_CACHE'] = $bootstrapCache . '/packages.php';
+}
+
 // On Vercel, require APP_KEY or show a clear error instead of 500
 if (getenv('VERCEL') && empty(getenv('APP_KEY'))) {
     http_response_code(503);
