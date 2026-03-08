@@ -13,7 +13,7 @@ class Application extends BaseApplication
      * Get the path to the bootstrap cache directory.
      * On Vercel the project filesystem is read-only; use /tmp so PackageManifest can write.
      */
-    public function bootstrapPath(string $path = ''): string
+    public function bootstrapPath($path = '')
     {
         if (getenv('VERCEL') && ($path === 'cache' || str_starts_with($path, 'cache' . \DIRECTORY_SEPARATOR))) {
             $cacheDir = '/tmp/bootstrap-cache';
