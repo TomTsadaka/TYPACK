@@ -10,21 +10,30 @@ services:
       APP_ENV: local
       APP_DEBUG: true
       APP_KEY: base64:UvubEOyYzf0wsfAEufm4b0cBfErvSMVkJ2HsEoZhLgs=
-      APP_URL: http://localhost:8000
+      APP_URL: http://localhost:10000
       DB_CONNECTION: pgsql
-      DB_HOST: localhost
-      DB_PORT: 5433
+      DB_HOST: db
+      DB_PORT: 5432
       DB_DATABASE: laravel
       DB_USERNAME: laravel
       DB_PASSWORD: secret
+      CACHE_STORE: file
+      SESSION_DRIVER: file
+      QUEUE_CONNECTION: sync
       SEED_ADMIN: true
       # Bypass Pail provider errors
       REGISTER_PHP_SERVICES: false
     volumes:
-      # Mount storage and cache directories
-      - ./:/var/www/html
+      # Mount only code paths so vendor from image is preserved (no composer on host needed)
+      - ./app:/var/www/html/app
+      - ./config:/var/www/html/config
+      - ./database:/var/www/html/database
+      - ./public:/var/www/html/public
+      - ./resources:/var/www/html/resources
+      - ./routes:/var/www/html/routes
       - ./storage:/var/www/html/storage
       - ./bootstrap/cache:/var/www/html/bootstrap/cache
+      # Don't mount .env: container uses env below (DB_HOST=db). Mounted .env would use 127.0.0.1 and fail.
     depends_on:
       - db
 
