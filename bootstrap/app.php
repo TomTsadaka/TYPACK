@@ -42,6 +42,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withProviders([
+        \App\Providers\VercelServiceProvider::class,
         \Illuminate\View\ViewServiceProvider::class,
         AuthServiceProvider::class,
         \App\Providers\Filament\AdminPanelProvider::class,
