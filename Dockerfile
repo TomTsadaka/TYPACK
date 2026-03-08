@@ -52,6 +52,12 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progre
 # Copy the rest of the project
 COPY . .
 
+# Build frontend assets (Vite) for production
+RUN apt-get update && apt-get install -y nodejs npm && rm -rf /var/lib/apt/lists/* \
+    && npm ci --no-optional \
+    && npm run build \
+    && rm -rf node_modules
+
 # Ensure Laravel cache paths exist + permissions before artisan runs
 RUN mkdir -p storage/framework/{cache,sessions,views} \
     storage/framework/cache/data \
