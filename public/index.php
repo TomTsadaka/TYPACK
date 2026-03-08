@@ -17,8 +17,9 @@ require __DIR__.'/../vendor/autoload.php';
 /** @var Application $app */
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
-// Vercel: bind view before any request (exception handler needs it; providers may load too late)
+// Vercel: bind view (and its deps) before any request so exception handler can render
 if (getenv('VERCEL') && ! $app->bound('view')) {
+    $app->register(\Illuminate\Filesystem\FilesystemServiceProvider::class);
     $app->register(\Illuminate\View\ViewServiceProvider::class);
 }
 
