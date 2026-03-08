@@ -7,10 +7,12 @@ WORKDIR /var/www/html
 # Set Composer memory limit to unlimited
 ENV COMPOSER_MEMORY_LIMIT=-1
 
-# Install system dependencies
+# Install system dependencies (curl for NodeSource)
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
+    curl \
+    ca-certificates \
     libzip-dev \
     libpq-dev \
     libonig-dev \
@@ -52,8 +54,11 @@ RUN composer install --no-dev --optimize-autoloader --no-interaction --no-progre
 # Copy the rest of the project
 COPY . .
 
-# Build frontend assets (Vite) for production
-RUN apt-get update && apt-get install -y nodejs npm && rm -rf /var/lib/apt/lists/* \
+# Install Node.js 24.x (package.json engines) and build frontend assets
+RUN apt-get update && apt-get install -y curl ca-certificates \
+    && curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/* \
     && npm ci --no-optional \
     && npm run build \
     && rm -rf node_modules
