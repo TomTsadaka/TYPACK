@@ -3,6 +3,7 @@
 .env.*
 !.env.example
 .git
+bootstrap/cache/*.php
 .idea
 .history
 *.log
