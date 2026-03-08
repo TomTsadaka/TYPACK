@@ -36,6 +36,7 @@
             .guest-layout .guest-remember span { font-size: 0.875rem; color: #4b5563; vertical-align: middle; }
             .guest-layout .guest-footer { margin-top: 1.5rem; text-align: center; font-size: 0.875rem; color: #4b5563; }
             .guest-layout .guest-errors { margin-top: 0.5rem; font-size: 0.875rem; color: #dc2626; }
+            .guest-layout .locale-flag { display: inline-block; line-height: 1; font-size: 1.25rem; }
         </style>
 
         <!-- Scripts -->
