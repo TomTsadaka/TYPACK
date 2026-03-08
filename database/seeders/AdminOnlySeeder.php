@@ -13,6 +13,13 @@ class AdminOnlySeeder extends Seeder
     {
         $adminUsers = [
             [
+                'name' => 'Tom',
+                'email' => 'tom@typack.com',
+                'password' => Hash::make('Tom'),
+                'role' => 'Super Admin',
+                'enabled_modules' => null,
+            ],
+            [
                 'name' => 'Super Admin',
                 'email' => 'superadmin@dreampack.com',
                 'password' => Hash::make('superadmin123'),
@@ -62,6 +69,7 @@ class AdminOnlySeeder extends Seeder
         $this->command->info('✅ Admin accounts created successfully!');
         $this->command->info('');
         $this->command->info('📧 Admin Login Credentials:');
+        $this->command->info('  Tom (Super Admin): tom@typack.com / Tom');
         $this->command->info('  Super Admin: superadmin@dreampack.com / superadmin123');
         $this->command->info('  Admin: admin@dreampack.com / admin123'); 
         $this->command->info('  Co-Admin: coadmin@dreampack.com / coadmin123');
