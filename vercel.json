@@ -7,7 +7,7 @@
     "COMPOSER_MEMORY_LIMIT": "-1",
     "APP_NAME": "TYPACK",
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
+    "APP_DEBUG": "true",
     "APP_KEY": "base64:tJQioATixVcBm0EE+YSyUhFHYkNRJgKNArpKYNvz06g=",
     "VERCEL_DEBUG": "1",
     "SESSION_DRIVER": "cookie",
