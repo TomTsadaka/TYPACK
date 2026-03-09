@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --calm-primary: #5B7B6B;
+        --calm-primary-hover: #4A6A5A;
+        --calm-accent: #9B8B7E;
+        --calm-accent-hover: #8A7A6D;
+        --calm-background: #F8F7F4;
+        --calm-surface: #F0F2EF;
+        --calm-card: #FDFCFA;
+        --calm-charcoal: #2C2B28;
+        --calm-muted: #6B6A65;
+        --calm-border: #E5E3DF;
+        --calm-error: #B86B6B;
+    }
+
+    body {
+        @apply bg-calm-background text-calm-charcoal;
+    }
+}
+
 @layer components {
     .locale-flag {
         display: inline-block;

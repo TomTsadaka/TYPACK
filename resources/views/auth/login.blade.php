@@ -27,14 +27,14 @@
         <!-- Remember Me -->
         <div class="guest-remember block mt-4">
             <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                <input id="remember_me" type="checkbox" class="rounded border-calm-border text-calm-primary shadow-calm-sm focus:ring-calm-primary" name="remember">
+                <span class="ms-2 text-sm text-calm-muted">{{ __('Remember me') }}</span>
             </label>
         </div>
 
         <div class="guest-actions flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                <a class="underline text-sm text-calm-muted hover:text-calm-charcoal rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-calm-primary" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
@@ -45,8 +45,8 @@
         </div>
 
         <div class="guest-footer mt-6 text-center">
-            <span class="text-sm text-gray-600">{{ __("Don't have an account?") }}</span>
-            <a class="guest-link-amber text-sm text-amber-600 hover:text-amber-800 font-semibold underline ms-1" href="{{ route('register') }}">
+            <span class="text-sm text-calm-muted">{{ __("Don't have an account?") }}</span>
+            <a class="guest-link-accent text-sm font-semibold underline ms-1" href="{{ route('register') }}">
                 {{ __('Register') }}
             </a>
         </div>

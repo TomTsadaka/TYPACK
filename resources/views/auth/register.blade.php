@@ -46,8 +46,8 @@
         </div>
 
         <div class="guest-footer mt-6 text-center">
-            <span class="text-sm text-gray-600">{{ __('Already have an account?') }}</span>
-            <a class="guest-link-amber text-sm text-amber-600 hover:text-amber-800 font-semibold underline ms-1" href="{{ route('login') }}">
+            <span class="text-sm text-calm-muted">{{ __('Already have an account?') }}</span>
+            <a class="guest-link-accent text-sm font-semibold underline ms-1" href="{{ route('login') }}">
                 {{ __('Log in') }}
             </a>
         </div>
