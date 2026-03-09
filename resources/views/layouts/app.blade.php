@@ -35,6 +35,13 @@
             .app-layout .app-link:hover { color: #0d9488; text-decoration: underline; }
             .app-layout .app-muted { color: #78716c; }
             .app-layout .locale-flag { display: inline-block; line-height: 1; font-size: 1.25rem; }
+            .app-layout .store-card { background: #fff; border: 1px solid #e7e5e4; border-radius: 1rem; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04); }
+            .app-layout .store-card-interactive { background: #fff; border: 1px solid #e7e5e4; border-radius: 1rem; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04); cursor: pointer; }
+            .app-layout .dashboard-icon-box { width: 2.5rem; height: 2.5rem; flex-shrink: 0; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; }
+            .app-layout .dashboard-icon { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+            .app-layout .dashboard-arrow { width: 1rem; height: 1rem; flex-shrink: 0; }
+            .app-layout .dashboard-blur-top { width: 12rem; height: 12rem; }
+            .app-layout .dashboard-blur-bottom { width: 10rem; height: 10rem; }
         </style>
 
         <!-- Scripts -->
