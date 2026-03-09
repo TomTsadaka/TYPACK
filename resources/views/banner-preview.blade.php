@@ -5,33 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner Preview - {{ $banner->title ?? 'Untitled' }}</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=sora:300,400,500,600,700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        sans: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
                     },
                     boxShadow: {
-                        'store': '0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04)',
-                        'store-lg': '0 10px 40px -10px rgb(0 0 0 / 0.12)',
+                        'store': '0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.02)',
+                        'store-lg': '0 12px 32px -8px rgb(0 0 0 / 0.1), 0 4px 12px -4px rgb(0 0 0 / 0.04)',
+                        'store-xl': '0 24px 48px -12px rgb(0 0 0 / 0.12)',
                     },
                     borderRadius: {
-                        'store': '0.75rem',
-                        'store-lg': '1rem',
+                        'store': '0.5rem',
+                        'store-lg': '0.75rem',
+                        'store-xl': '1rem',
                     },
                     colors: {
                         calm: {
-                            primary: '#0D9488',
-                            'primary-hover': '#0F766E',
-                            background: '#FAFAFA',
-                            surface: '#F8FAFC',
-                            card: '#FFFFFF',
-                            charcoal: '#0F172A',
-                            muted: '#64748B',
-                            border: '#E2E8F0',
+                            primary: '#0f766e',
+                            'primary-hover': '#0d9488',
+                            background: '#fafaf9',
+                            surface: '#f5f5f4',
+                            card: '#ffffff',
+                            charcoal: '#1c1917',
+                            muted: '#78716c',
+                            border: '#e7e5e4',
                         }
                     }
                 }
@@ -39,25 +41,25 @@
         }
     </script>
 </head>
-<body class="bg-[#FAFAFA] font-sans antialiased">
+<body class="bg-[#fafaf9] font-sans antialiased">
     <div class="min-h-screen p-4">
         <!-- Header -->
-        <div class="bg-white shadow-store rounded-store-lg border border-[#E2E8F0] mb-6 p-4">
+        <div class="bg-white shadow-store rounded-store-lg border border-[#e7e5e4] mb-6 p-4">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-2xl font-bold text-[#0F172A]">Banner Preview</h1>
-                    <p class="text-[#64748B] mt-1">This is how your banner will appear on the frontend</p>
+                    <h1 class="text-2xl font-bold text-[#1c1917] tracking-tight">Banner Preview</h1>
+                    <p class="text-[#78716c] mt-1 text-sm">This is how your banner will appear on the frontend</p>
                 </div>
                 <div class="flex space-x-2">
                     @if($banner->link_url)
-                        <a href="{{ $banner->link_url }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-[#0D9488] text-white rounded-store hover:bg-[#0F766E]">
+                        <a href="{{ $banner->link_url }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-[#0f766e] text-white rounded-store hover:bg-[#0d9488]">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
                             Open Link
                         </a>
                     @endif
-                    <button onclick="window.close()" class="inline-flex items-center px-4 py-2 bg-[#64748B] text-white rounded-store hover:bg-[#475569]">
+                    <button onclick="window.close()" class="inline-flex items-center px-4 py-2 bg-[#78716c] text-white rounded-store hover:bg-[#475569]">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -68,7 +70,7 @@
         </div>
 
         <!-- Banner Preview -->
-        <div class="bg-white shadow-store-lg rounded-store-lg border border-[#E2E8F0] overflow-hidden">
+        <div class="bg-white shadow-store-lg rounded-store-lg border border-[#e7e5e4] overflow-hidden">
             <div class="relative">
                 @if($banner->link_url)
                     <a href="{{ $banner->link_url }}" target="_blank" class="block">
@@ -79,7 +81,7 @@
                     @if($banner->image_url)
                         <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full max-h-64 md:max-h-80 h-auto object-contain object-center">
                     @else
-                        <div class="bg-[#F8FAFC] h-64 flex items-center justify-center">
+                        <div class="bg-[#f5f5f4] h-64 flex items-center justify-center">
                             <p class="text-[#64748B]">No desktop image uploaded</p>
                         </div>
                     @endif
@@ -90,7 +92,7 @@
                     @if($banner->image_url)
                         <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full max-h-64 md:max-h-80 h-auto object-contain object-center">
                     @else
-                        <div class="bg-[#F8FAFC] h-40 flex items-center justify-center">
+                        <div class="bg-[#f5f5f4] h-40 flex items-center justify-center">
                             <p class="text-[#64748B]">No mobile image uploaded</p>
                         </div>
                     @endif
@@ -117,7 +119,7 @@
         </div>
 
         <!-- Banner Details -->
-        <div class="bg-white shadow-store-lg rounded-store-lg border border-[#E2E8F0] p-6 mt-6">
+        <div class="bg-white shadow-store-lg rounded-store-lg border border-[#e7e5e4] p-6 mt-6">
             <h2 class="text-xl font-bold text-[#0F172A] mb-4">Banner Details</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>

@@ -5,10 +5,10 @@
     ]);
     $current = app()->getLocale();
 @endphp
-<div class="flex items-center gap-0.5 rounded-store border border-calm-border bg-calm-surface p-0.5" role="group" aria-label="{{ __('Language') }}">
+<div class="flex items-center gap-0.5 rounded-store border border-calm-border bg-calm-surface/50 p-0.5" role="group" aria-label="{{ __('Language') }}">
     @foreach ($locales as $code => $config)
         <a href="{{ route('locale.switch', ['locale' => $code]) }}"
-           class="inline-flex items-center justify-center w-9 h-9 rounded-md text-lg hover:bg-white hover:shadow-store focus:outline-none focus:ring-2 focus:ring-calm-primary focus:ring-offset-1 transition-all {{ $current === $code ? 'bg-white shadow-store ring-1 ring-calm-border' : '' }}"
+           class="inline-flex items-center justify-center w-9 h-9 rounded-md text-lg hover:bg-white hover:shadow-store focus:outline-none focus:ring-2 focus:ring-calm-primary focus:ring-offset-1 transition-all {{ $current === $code ? 'bg-white shadow-store border border-calm-border' : '' }}"
            title="{{ $config['name'] }}"
            aria-current="{{ $current === $code ? 'true' : 'false' }}">
             <span class="locale-flag" role="img" aria-label="{{ $config['name'] }}">{{ $config['flag'] ?? '' }}</span>

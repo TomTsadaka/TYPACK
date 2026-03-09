@@ -4,21 +4,27 @@
 
 @layer base {
     :root {
-        --calm-primary: #0D9488;
-        --calm-primary-hover: #0F766E;
-        --calm-accent: #0D9488;
-        --calm-accent-hover: #0F766E;
-        --calm-background: #FAFAFA;
-        --calm-surface: #F8FAFC;
-        --calm-card: #FFFFFF;
-        --calm-charcoal: #0F172A;
-        --calm-muted: #64748B;
-        --calm-border: #E2E8F0;
-        --calm-error: #DC2626;
+        --calm-primary: #0f766e;
+        --calm-primary-hover: #0d9488;
+        --calm-accent: #0f766e;
+        --calm-accent-hover: #0d9488;
+        --calm-background: #fafaf9;
+        --calm-surface: #f5f5f4;
+        --calm-card: #ffffff;
+        --calm-charcoal: #1c1917;
+        --calm-muted: #78716c;
+        --calm-border: #e7e5e4;
+        --calm-error: #dc2626;
+    }
+
+    html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     body {
         @apply bg-calm-background text-calm-charcoal antialiased;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
 }
 
@@ -30,10 +36,18 @@
     }
 
     .store-btn-primary {
-        @apply inline-flex items-center justify-center px-6 py-3 rounded-store font-semibold text-sm text-white bg-calm-primary shadow-store hover:bg-calm-primary-hover hover:shadow-store-lg transition-all duration-200;
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-store font-semibold text-sm text-white bg-calm-primary shadow-store hover:bg-calm-primary-hover hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-calm-primary focus:ring-offset-2 transition-all duration-200;
     }
 
     .store-card {
-        @apply bg-white rounded-store-lg shadow-store border border-calm-border overflow-hidden transition-shadow duration-200 hover:shadow-store-lg;
+        @apply bg-white rounded-store-xl shadow-store border border-calm-border overflow-hidden transition-all duration-200 hover:shadow-store-lg hover:border-calm-border;
+    }
+
+    .store-card-interactive {
+        @apply store-card cursor-pointer hover:border-calm-primary/30;
+    }
+
+    .input-refined {
+        @apply w-full rounded-store border border-calm-border bg-white px-4 py-3 text-calm-charcoal placeholder:text-calm-muted shadow-store-inner transition-all duration-200 focus:border-calm-primary focus:outline-none focus:ring-2 focus:ring-calm-primary/20;
     }
 }
