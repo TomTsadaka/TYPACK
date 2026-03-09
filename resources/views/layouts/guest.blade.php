@@ -19,7 +19,7 @@
             .guest-layout { font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; margin: 0; color: #1c1917; }
             .guest-layout .guest-page { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1rem; background: linear-gradient(165deg, #fafaf9 0%, #f5f5f4 50%, #fafaf9 100%); }
             .guest-layout .guest-card { width: 100%; max-width: 28rem; margin-top: 2rem; padding: 2.5rem; background: #fff; box-shadow: 0 12px 32px -8px rgb(0 0 0 / 0.08), 0 4px 12px -4px rgb(0 0 0 / 0.04); border-radius: 1rem; overflow: hidden; border: 1px solid #e7e5e4; }
-            .guest-layout .guest-logo { width: 2.5rem; height: 2.5rem; color: #0f766e; }
+            .guest-layout .guest-logo { width: 2.5rem; height: 2.5rem; max-width: 2.5rem; max-height: 2.5rem; color: #0f766e; display: block; }
             .guest-layout label { display: block; font-weight: 500; font-size: 0.875rem; color: #1c1917; margin-bottom: 0.375rem; letter-spacing: -0.01em; }
             .guest-layout input[type="email"], .guest-layout input[type="password"], .guest-layout input[type="text"] { display: block; width: 100%; margin-top: 0.25rem; padding: 0.75rem 1rem; font-size: 1rem; border: 1px solid #e7e5e4; border-radius: 0.5rem; background: #fff; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; box-shadow: inset 0 1px 2px 0 rgb(0 0 0 / 0.03); }
             .guest-layout input:focus { outline: none; border-color: #0f766e; box-shadow: 0 0 0 3px rgb(15 118 110 / 0.12); }
@@ -51,7 +51,7 @@
             </div>
             <div class="flex flex-col items-center">
                 <a href="/" class="block transition-transform hover:scale-105 duration-200">
-                    <x-application-logo class="guest-logo w-10 h-10 fill-current text-calm-primary" />
+                    <x-application-logo class="guest-logo w-10 h-10 fill-current text-calm-primary" width="40" height="40" style="max-width:2.5rem;max-height:2.5rem;width:2.5rem;height:2.5rem;" />
                 </a>
                 <span class="mt-2 text-xs font-medium tracking-wide text-calm-muted uppercase">{{ config('app.name') }}</span>
             </div>

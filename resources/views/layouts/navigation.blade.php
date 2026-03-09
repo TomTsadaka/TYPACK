@@ -3,7 +3,7 @@
         <div class="flex justify-between h-16">
             <div class="flex items-center gap-10">
                 <a href="{{ route('dashboard') }}" class="flex items-center gap-2 shrink-0 group">
-                    <x-application-logo class="block h-8 w-auto fill-current text-calm-primary group-hover:text-calm-primary-hover transition-colors" />
+                    <x-application-logo class="block h-8 w-auto fill-current text-calm-primary group-hover:text-calm-primary-hover transition-colors" width="32" height="32" style="max-width:2rem;max-height:2rem;width:2rem;height:auto;" />
                     <span class="text-sm font-semibold text-calm-charcoal hidden sm:block">{{ config('app.name') }}</span>
                 </a>
 

@@ -19,6 +19,7 @@
             .app-layout { font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; margin: 0; color: #1c1917; background: #fafaf9; min-height: 100vh; }
             .app-layout .app-nav { background: #fff; border-bottom: 1px solid #e7e5e4; box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.03); }
             .app-layout .app-nav a { color: #1c1917; text-decoration: none; font-weight: 500; }
+            .app-layout .app-nav a[href*="dashboard"] svg { max-width: 2rem; max-height: 2rem; width: 2rem; height: auto; display: block; }
             .app-layout .app-nav a:hover { color: #0f766e; }
             .app-layout .app-nav .nav-active { color: #0f766e; border-bottom-color: #0f766e; }
             .app-layout .app-nav button { color: #78716c; background: transparent; border: none; cursor: pointer; font-family: inherit; font-size: 0.875rem; }
