@@ -16,15 +16,22 @@ Render will create:
 - A **PostgreSQL** database: `typack-db`
 - A **Web Service**: `typack` (Docker build from your Dockerfile)
 
-### 2. Set APP_URL and ASSET_URL
+### 2. Set APP_KEY, APP_URL, and ASSET_URL
 
-Render will ask for two values (they were set to “prompt in Dashboard”):
+In the **typack** web service → **Environment**, set these (required for the app to start and for health checks to pass):
 
-1. Open the **typack** web service.
-2. Go to **Environment**.
-3. Set **APP_URL** to your service URL, e.g. `https://typack-xxxx.onrender.com` (see the service’s **Settings** or the top of the page for the exact URL).
-4. Set **ASSET_URL** to the same value as **APP_URL**.
-5. Save. Render will redeploy.
+1. **APP_KEY** – Laravel’s encryption key. On your **local machine** in the project folder run:
+   ```bash
+   php artisan key:generate --show
+   ```
+   Copy the output (e.g. `base64:xxxxxxxx...`) and in Render set **APP_KEY** to that value.  
+   *(Render’s auto-generated key is not in the right format and causes “Unsupported cipher or incorrect key length”.)*
+
+2. **APP_URL** – Your service URL, e.g. `https://typack-xxxx.onrender.com` (from the service’s **Settings** or top of the page).
+
+3. **ASSET_URL** – Same as **APP_URL**.
+
+4. Save. Render will redeploy. The next deploy should pass the health check once APP_KEY is valid.
 
 ### 3. Create an admin user (first time only)
 

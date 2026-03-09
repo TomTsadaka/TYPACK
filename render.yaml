@@ -22,8 +22,9 @@ services:
         value: TYPACK
       - key: APP_ENV
         value: production
+      # Set APP_KEY in Render Dashboard: run "php artisan key:generate --show" locally and paste the value (e.g. base64:xxx)
       - key: APP_KEY
-        generateValue: true
+        sync: false
       - key: APP_DEBUG
         value: "false"
       - key: APP_URL

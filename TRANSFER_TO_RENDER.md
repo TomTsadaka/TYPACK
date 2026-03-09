@@ -31,10 +31,11 @@ The first deploy will run automatically. Migrations run on every deploy via the 
 
 1. In the Render dashboard, open the **typack** **web service** (not the database).
 2. Go to **Environment**.
-3. Set these (replace with your real URL from the service’s **Settings** or the top of the page):
-   - **APP_URL** = `https://typack-XXXX.onrender.com` (your actual service URL).
-   - **ASSET_URL** = same as APP_URL, e.g. `https://typack-XXXX.onrender.com`.
-4. Click **Save Changes**. Render will redeploy with the new env.
+3. Set these:
+   - **APP_KEY** – Run locally: `php artisan key:generate --show`. Copy the output (e.g. `base64:xxx...`) and set **APP_KEY** in Render to that value. (Render’s auto-generated key causes “Unsupported cipher or incorrect key length” and health check failure.)
+   - **APP_URL** = your service URL, e.g. `https://typack-XXXX.onrender.com`.
+   - **ASSET_URL** = same as APP_URL.
+4. Click **Save Changes**. Render will redeploy; health check should pass once APP_KEY is valid.
 
 ---
 
