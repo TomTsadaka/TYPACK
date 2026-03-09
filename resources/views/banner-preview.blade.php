@@ -5,26 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banner Preview - {{ $banner->title ?? 'Untitled' }}</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=nunito:400,500,600,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700&display=swap" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'store': '0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.04)',
+                        'store-lg': '0 10px 40px -10px rgb(0 0 0 / 0.12)',
+                    },
+                    borderRadius: {
+                        'store': '0.75rem',
+                        'store-lg': '1rem',
                     },
                     colors: {
                         calm: {
-                            primary: '#5B7B6B',
-                            'primary-hover': '#4A6A5A',
-                            accent: '#9B8B7E',
-                            background: '#F8F7F4',
-                            surface: '#F0F2EF',
-                            card: '#FDFCFA',
-                            charcoal: '#2C2B28',
-                            muted: '#6B6A65',
-                            border: '#E5E3DF',
+                            primary: '#0D9488',
+                            'primary-hover': '#0F766E',
+                            background: '#FAFAFA',
+                            surface: '#F8FAFC',
+                            card: '#FFFFFF',
+                            charcoal: '#0F172A',
+                            muted: '#64748B',
+                            border: '#E2E8F0',
                         }
                     }
                 }
@@ -32,25 +39,25 @@
         }
     </script>
 </head>
-<body class="bg-[#F8F7F4] font-sans antialiased">
+<body class="bg-[#FAFAFA] font-sans antialiased">
     <div class="min-h-screen p-4">
         <!-- Header -->
-        <div class="bg-[#FDFCFA] shadow-sm rounded-xl border border-[#E5E3DF] mb-6 p-4">
+        <div class="bg-white shadow-store rounded-store-lg border border-[#E2E8F0] mb-6 p-4">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-2xl font-bold text-[#2C2B28]">Banner Preview</h1>
-                    <p class="text-[#6B6A65] mt-1">This is how your banner will appear on the frontend</p>
+                    <h1 class="text-2xl font-bold text-[#0F172A]">Banner Preview</h1>
+                    <p class="text-[#64748B] mt-1">This is how your banner will appear on the frontend</p>
                 </div>
                 <div class="flex space-x-2">
                     @if($banner->link_url)
-                        <a href="{{ $banner->link_url }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-[#5B7B6B] text-white rounded-lg hover:bg-[#4A6A5A]">
+                        <a href="{{ $banner->link_url }}" target="_blank" class="inline-flex items-center px-4 py-2 bg-[#0D9488] text-white rounded-store hover:bg-[#0F766E]">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
                             Open Link
                         </a>
                     @endif
-                    <button onclick="window.close()" class="inline-flex items-center px-4 py-2 bg-[#6B6A65] text-white rounded-lg hover:bg-[#5B5A55]">
+                    <button onclick="window.close()" class="inline-flex items-center px-4 py-2 bg-[#64748B] text-white rounded-store hover:bg-[#475569]">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -61,7 +68,7 @@
         </div>
 
         <!-- Banner Preview -->
-        <div class="bg-[#FDFCFA] shadow-lg rounded-xl border border-[#E5E3DF] overflow-hidden">
+        <div class="bg-white shadow-store-lg rounded-store-lg border border-[#E2E8F0] overflow-hidden">
             <div class="relative">
                 @if($banner->link_url)
                     <a href="{{ $banner->link_url }}" target="_blank" class="block">
@@ -72,8 +79,8 @@
                     @if($banner->image_url)
                         <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full h-auto">
                     @else
-                        <div class="bg-[#F0F2EF] h-96 flex items-center justify-center">
-                            <p class="text-[#6B6A65]">No desktop image uploaded</p>
+                        <div class="bg-[#F8FAFC] h-96 flex items-center justify-center">
+                            <p class="text-[#64748B]">No desktop image uploaded</p>
                         </div>
                     @endif
                 </div>
@@ -83,8 +90,8 @@
                     @if($banner->image_url)
                         <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full h-auto">
                     @else
-                        <div class="bg-[#F0F2EF] h-48 flex items-center justify-center">
-                            <p class="text-[#6B6A65]">No mobile image uploaded</p>
+                        <div class="bg-[#F8FAFC] h-48 flex items-center justify-center">
+                            <p class="text-[#64748B]">No mobile image uploaded</p>
                         </div>
                     @endif
                 </div>
@@ -110,8 +117,8 @@
         </div>
 
         <!-- Banner Details -->
-        <div class="bg-[#FDFCFA] shadow-lg rounded-xl border border-[#E5E3DF] p-6 mt-6">
-            <h2 class="text-xl font-bold text-[#2C2B28] mb-4">Banner Details</h2>
+        <div class="bg-white shadow-store-lg rounded-store-lg border border-[#E2E8F0] p-6 mt-6">
+            <h2 class="text-xl font-bold text-[#0F172A] mb-4">Banner Details</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label class="block text-sm font-medium text-[#2C2B28]">Title</label>
@@ -131,13 +138,13 @@
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-[#2C2B28]">Status</label>
-                    <span class="inline-flex mt-1 px-2 py-1 text-xs font-semibold rounded-full {{ $banner->is_active ? 'bg-[#E8F0EC] text-[#5B7B6B]' : 'bg-[#F5E8E8] text-[#B86B6B]' }}">
+                    <span class="inline-flex mt-1 px-2 py-1 text-xs font-semibold rounded-full {{ $banner->is_active ? 'bg-teal-100 text-[#0D9488]' : 'bg-red-100 text-red-600' }}">
                         {{ $banner->is_active ? 'Active' : 'Inactive' }}
                     </span>
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-[#2C2B28]">Currently Active</label>
-                    <span class="inline-flex mt-1 px-2 py-1 text-xs font-semibold rounded-full {{ $banner->isCurrentlyActive() ? 'bg-[#E8F0EC] text-[#5B7B6B]' : 'bg-[#F0F2EF] text-[#6B6A65]' }}">
+                    <span class="inline-flex mt-1 px-2 py-1 text-xs font-semibold rounded-full {{ $banner->isCurrentlyActive() ? 'bg-teal-100 text-[#0D9488]' : 'bg-slate-100 text-[#64748B]' }}">
                         {{ $banner->isCurrentlyActive() ? 'Yes' : 'No' }}
                     </span>
                 </div>

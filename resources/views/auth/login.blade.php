@@ -2,6 +2,11 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <div class="mb-6">
+        <h2 class="text-xl font-semibold text-calm-charcoal">{{ __('Sign in to your account') }}</h2>
+        <p class="mt-1 text-sm text-calm-muted">{{ __('Enter your credentials to continue') }}</p>
+    </div>
+
     <form method="POST" action="{{ route('login') }}">
         @csrf
 

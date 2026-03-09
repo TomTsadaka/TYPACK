@@ -4,21 +4,21 @@
 
 @layer base {
     :root {
-        --calm-primary: #5B7B6B;
-        --calm-primary-hover: #4A6A5A;
-        --calm-accent: #9B8B7E;
-        --calm-accent-hover: #8A7A6D;
-        --calm-background: #F8F7F4;
-        --calm-surface: #F0F2EF;
-        --calm-card: #FDFCFA;
-        --calm-charcoal: #2C2B28;
-        --calm-muted: #6B6A65;
-        --calm-border: #E5E3DF;
-        --calm-error: #B86B6B;
+        --calm-primary: #0D9488;
+        --calm-primary-hover: #0F766E;
+        --calm-accent: #0D9488;
+        --calm-accent-hover: #0F766E;
+        --calm-background: #FAFAFA;
+        --calm-surface: #F8FAFC;
+        --calm-card: #FFFFFF;
+        --calm-charcoal: #0F172A;
+        --calm-muted: #64748B;
+        --calm-border: #E2E8F0;
+        --calm-error: #DC2626;
     }
 
     body {
-        @apply bg-calm-background text-calm-charcoal;
+        @apply bg-calm-background text-calm-charcoal antialiased;
     }
 }
 
@@ -27,5 +27,13 @@
         display: inline-block;
         line-height: 1;
         font-size: 1.25rem;
+    }
+
+    .store-btn-primary {
+        @apply inline-flex items-center justify-center px-6 py-3 rounded-store font-semibold text-sm text-white bg-calm-primary shadow-store hover:bg-calm-primary-hover hover:shadow-store-lg transition-all duration-200;
+    }
+
+    .store-card {
+        @apply bg-white rounded-store-lg shadow-store border border-calm-border overflow-hidden transition-shadow duration-200 hover:shadow-store-lg;
     }
 }
