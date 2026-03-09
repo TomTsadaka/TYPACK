@@ -25,8 +25,8 @@
         <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
             <a href="{{ route('profile.edit') }}" class="store-card group block p-6">
                 <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-store bg-teal-100 flex items-center justify-center group-hover:bg-teal-200 transition-colors">
-                        <svg class="w-6 h-6 text-calm-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-store bg-teal-100 flex items-center justify-center group-hover:bg-teal-200 transition-colors">
+                        <svg class="w-5 h-5 text-calm-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
                     </div>
@@ -42,8 +42,8 @@
 
             <div class="store-card p-6">
                 <div class="flex items-start gap-4">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-store bg-slate-100 flex items-center justify-center">
-                        <svg class="w-6 h-6 text-calm-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-store bg-slate-100 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-calm-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>

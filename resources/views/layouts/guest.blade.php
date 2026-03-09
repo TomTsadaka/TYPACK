@@ -19,7 +19,7 @@
             .guest-layout { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; margin: 0; color: #0F172A; }
             .guest-layout .guest-page { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1rem; background: linear-gradient(180deg, #F8FAFC 0%, #FAFAFA 100%); }
             .guest-layout .guest-card { width: 100%; max-width: 28rem; margin-top: 1.5rem; padding: 2rem; background: #fff; box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.12); border-radius: 1rem; overflow: hidden; border: 1px solid #E2E8F0; }
-            .guest-layout .guest-logo { width: 5rem; height: 5rem; color: #0D9488; }
+            .guest-layout .guest-logo { width: 2.5rem; height: 2.5rem; color: #0D9488; }
             .guest-layout label { display: block; font-weight: 500; font-size: 0.875rem; color: #0F172A; margin-bottom: 0.25rem; }
             .guest-layout input[type="email"], .guest-layout input[type="password"], .guest-layout input[type="text"] { display: block; width: 100%; margin-top: 0.25rem; padding: 0.625rem 0.875rem; font-size: 1rem; border: 1px solid #E2E8F0; border-radius: 0.5rem; background: #fff; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
             .guest-layout input:focus { outline: none; border-color: #0D9488; box-shadow: 0 0 0 3px rgb(13 148 136 / 0.15); }
@@ -49,7 +49,7 @@
             </div>
             <div>
                 <a href="/" class="block">
-                    <x-application-logo class="guest-logo w-16 h-16 fill-current text-calm-primary" />
+                    <x-application-logo class="guest-logo w-10 h-10 fill-current text-calm-primary" />
                 </a>
             </div>
 

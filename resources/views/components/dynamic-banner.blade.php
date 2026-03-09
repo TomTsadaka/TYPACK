@@ -25,7 +25,7 @@ use App\Models\Banner;
         <img 
             src="{{ $mobileImage ?: $image }}" 
             alt="{{ $title ?? 'Banner' }}"
-            class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full max-h-40 h-36 object-cover object-center transition-transform duration-300 group-hover:scale-105"
         >
     </div>
 
@@ -34,20 +34,20 @@ use App\Models\Banner;
         <img 
             src="{{ $image }}" 
             alt="{{ $title ?? 'Banner' }}"
-            class="w-full {{ $size === 'full' ? 'h-64 md:h-80' : 'h-48 md:h-64' }} object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full {{ $size === 'full' ? 'max-h-48 md:max-h-56 h-40 md:h-48' : 'max-h-36 md:max-h-44 h-32 md:h-40' }} object-cover object-center transition-transform duration-300 group-hover:scale-105"
         >
     </div>
 
     {{-- Content Overlay --}}
     @if ($showTitle || $showSubtitle)
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
             <div class="text-white">
                 @if ($showTitle && $title)
-                    <h2 class="text-2xl md:text-3xl font-bold mb-2">{{ $title }}</h2>
+                    <h2 class="text-lg md:text-xl font-bold mb-1">{{ $title }}</h2>
                 @endif
                 
                 @if ($showSubtitle && $subtitle)
-                    <p class="text-sm md:text-base opacity-90">{{ $subtitle }}</p>
+                    <p class="text-xs md:text-sm opacity-90">{{ $subtitle }}</p>
                 @endif
             </div>
         </div>

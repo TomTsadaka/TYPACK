@@ -77,9 +77,9 @@
                 <!-- Desktop Image -->
                 <div class="hidden lg:block">
                     @if($banner->image_url)
-                        <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full h-auto">
+                        <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full max-h-64 md:max-h-80 h-auto object-contain object-center">
                     @else
-                        <div class="bg-[#F8FAFC] h-96 flex items-center justify-center">
+                        <div class="bg-[#F8FAFC] h-64 flex items-center justify-center">
                             <p class="text-[#64748B]">No desktop image uploaded</p>
                         </div>
                     @endif
@@ -88,9 +88,9 @@
                 <!-- Mobile Image -->
                 <div class="lg:hidden">
                     @if($banner->image_url)
-                        <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full h-auto">
+                        <img src="{{ $banner->image_url }}" alt="{{ $banner->title ?? 'Banner' }}" class="w-full max-h-64 md:max-h-80 h-auto object-contain object-center">
                     @else
-                        <div class="bg-[#F8FAFC] h-48 flex items-center justify-center">
+                        <div class="bg-[#F8FAFC] h-40 flex items-center justify-center">
                             <p class="text-[#64748B]">No mobile image uploaded</p>
                         </div>
                     @endif
@@ -99,12 +99,12 @@
                 <!-- Text Overlay -->
                 @if($banner->title || $banner->subtitle)
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                        <div class="p-8 text-white">
+                        <div class="p-4 lg:p-6 text-white">
                             @if($banner->title)
-                                <h2 class="text-3xl lg:text-5xl font-bold mb-2">{{ $banner->title }}</h2>
+                                <h2 class="text-xl lg:text-2xl font-bold mb-2">{{ $banner->title }}</h2>
                             @endif
                             @if($banner->subtitle)
-                                <p class="text-lg lg:text-xl opacity-90">{{ $banner->subtitle }}</p>
+                                <p class="text-sm lg:text-base opacity-90">{{ $banner->subtitle }}</p>
                             @endif
                         </div>
                     </div>
