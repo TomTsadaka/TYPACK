@@ -69,11 +69,6 @@
 
                     <div class="flex items-center gap-2 sm:gap-4 shrink-0">
                         <x-language-switcher />
-                        <a href="{{ route('home') }}#products" class="shop-cart-btn" title="{{ __('Cart') }}" aria-label="{{ __('View cart') }}">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                            </svg>
-                        </a>
                         @auth
                             <a href="{{ route('dashboard') }}" class="text-sm font-medium hidden sm:block">{{ __('Account') }}</a>
                         @else

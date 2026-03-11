@@ -10,11 +10,8 @@
         <p class="text-lg sm:text-xl text-[#6b7280] max-w-2xl mx-auto mb-12">
             {{ __('Discover our curated collection. Quality products, great prices.') }}
         </p>
-        <a href="#products" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#000] text-white text-base font-semibold rounded-lg hover:bg-[#333] transition-colors">
+        <a href="#products" class="inline-flex items-center justify-center px-8 py-4 bg-[#000] text-white text-base font-semibold rounded-lg hover:bg-[#333] transition-colors">
             {{ __('Shop Now') }}
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
         </a>
     </div>
 </section>
@@ -25,7 +22,7 @@
     <div class="flex items-center justify-between mb-12">
         <h2 id="featured-heading" class="text-2xl font-bold text-[#111] tracking-tight">{{ __('Featured') }}</h2>
         <a href="#products" class="text-sm font-semibold text-[#111] hover:text-[#333] hover:underline">
-            {{ __('View all') }} →
+            {{ __('View all') }}
         </a>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" role="list">
@@ -106,9 +103,6 @@
     @if($products->isEmpty())
         {{-- Empty state --}}
         <div class="flex flex-col items-center justify-center py-16 lg:py-24 px-8 bg-white border border-[#eee] rounded-xl text-center">
-            <svg class="w-16 h-16 text-[#d1d5db] mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
             <h3 class="text-lg font-semibold text-[#111] mb-2">{{ __('No products found') }}</h3>
             <p class="text-[#6b7280] mb-8 max-w-md">
                 {{ __('Try adjusting your filters or browse our full collection.') }}
