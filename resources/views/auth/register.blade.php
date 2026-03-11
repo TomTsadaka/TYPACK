@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="mb-8">
         <h2 class="guest-heading">{{ __('Create your account') }}</h2>
-        <p class="guest-subheading">{{ __('Join us and start shopping') }}</p>
+        <p class="guest-subheading">{{ __('Join us to checkout faster and track your orders.') }}</p>
     </div>
 
     <form method="POST" action="{{ route('register') }}" class="space-y-5">

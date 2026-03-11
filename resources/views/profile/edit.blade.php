@@ -1,8 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-calm-charcoal leading-tight tracking-tight">
-            {{ __('Profile') }}
-        </h2>
+        <div class="flex items-center justify-between">
+            <h2 class="font-semibold text-xl text-calm-charcoal leading-tight tracking-tight">
+                {{ __('Profile') }}
+            </h2>
+            <a href="{{ route('home') }}" class="text-sm font-medium text-calm-primary hover:text-calm-primary-hover">
+                ← {{ __('Back to Shop') }}
+            </a>
+        </div>
     </x-slot>
 
     <div class="py-12">

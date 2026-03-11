@@ -1,10 +1,9 @@
 <x-guest-layout>
-    <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
     <div class="mb-8">
         <h2 class="guest-heading">{{ __('Sign in to your account') }}</h2>
-        <p class="guest-subheading">{{ __('Enter your credentials to continue') }}</p>
+        <p class="guest-subheading">{{ __('Log in to view orders, save favorites, and checkout faster.') }}</p>
     </div>
 
     <form method="POST" action="{{ route('login') }}" class="space-y-5">

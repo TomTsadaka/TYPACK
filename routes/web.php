@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Banner;
 use Illuminate\Http\Request;
@@ -15,9 +16,8 @@ Route::get('/locale/{locale}', function (string $locale) {
     return redirect()->back();
 })->name('locale.switch');
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/products/{slug}', [HomeController::class, 'show'])->name('product.show');
 
 Route::get('/health', function () {
     return response()->json([

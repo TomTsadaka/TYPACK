@@ -8,13 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('title', __('Account')) – {{ config('app.name') }}</title>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=sora:300,400,500,600,700&display=swap" rel="stylesheet" />
 
-        <!-- Critical CSS: keeps login/register styled when Vite bundle fails to load -->
         <style>
             .guest-layout { font-family: 'Sora', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; margin: 0; color: #1c1917; }
             .guest-layout .guest-page { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 2rem 1rem; background: linear-gradient(165deg, #fafaf9 0%, #f5f5f4 50%, #fafaf9 100%); }
@@ -39,9 +37,10 @@
             .guest-layout .locale-flag { display: inline-block; line-height: 1; font-size: 1.25rem; }
             .guest-layout .guest-heading { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; color: #1c1917; line-height: 1.3; }
             .guest-layout .guest-subheading { font-size: 0.9375rem; color: #78716c; margin-top: 0.5rem; line-height: 1.5; }
+            .guest-layout .guest-shop-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.875rem; color: #78716c; }
+            .guest-layout .guest-shop-link:hover { color: #0f766e; }
         </style>
 
-        <!-- Scripts -->
         <x-vite-assets />
     </head>
     <body class="guest-layout font-sans text-calm-charcoal antialiased">
@@ -50,15 +49,20 @@
                 <x-language-switcher />
             </div>
             <div class="flex flex-col items-center">
-                <a href="/" class="block transition-transform hover:scale-105 duration-200">
+                <a href="{{ route('home') }}" class="block transition-transform hover:scale-105 duration-200">
                     <x-application-logo class="guest-logo w-10 h-10 fill-current text-calm-primary" width="40" height="40" style="max-width:2.5rem;max-height:2.5rem;width:2.5rem;height:2.5rem;" />
                 </a>
-                <span class="mt-2 text-xs font-medium tracking-wide text-calm-muted uppercase">{{ config('app.name') }}</span>
+                <span class="mt-2 text-xs font-semibold tracking-wide text-[#78716c] uppercase">{{ config('app.name') }}</span>
             </div>
 
             <div class="guest-card w-full sm:max-w-md mt-10 px-6 py-8 bg-white shadow-store-lg overflow-hidden sm:rounded-store-xl border border-calm-border">
                 {{ $slot }}
             </div>
+
+            <a href="{{ route('home') }}" class="guest-shop-link">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                {{ __('Continue shopping') }}
+            </a>
         </div>
     </body>
 </html>

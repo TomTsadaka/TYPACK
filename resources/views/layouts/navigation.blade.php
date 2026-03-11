@@ -2,14 +2,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center gap-10">
-                <a href="{{ route('dashboard') }}" class="flex items-center gap-2 shrink-0 group">
+                <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0 group">
                     <x-application-logo class="block h-8 w-auto fill-current text-calm-primary group-hover:text-calm-primary-hover transition-colors" width="32" height="32" style="max-width:2rem;max-height:2rem;width:2rem;height:auto;" />
                     <span class="text-sm font-semibold text-calm-charcoal hidden sm:block">{{ config('app.name') }}</span>
                 </a>
 
-                <div class="hidden sm:flex sm:items-center sm:gap-1">
+                <div class="hidden sm:flex sm:items-center sm:gap-6">
+                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                        {{ __('Shop') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Account') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -57,8 +60,11 @@
 
     <div :class="{'block': open, 'hidden': ! open}" class="sm:hidden border-t border-calm-border bg-white">
         <div class="pt-4 pb-4 space-y-1 px-4">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Shop') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Account') }}
             </x-responsive-nav-link>
         </div>
         <div class="pt-4 pb-4 border-t border-calm-border px-4">
