@@ -52,9 +52,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center h-16 gap-4">
                     <div class="flex items-center gap-8 min-w-0">
-                        <a href="{{ route('home') }}" class="flex items-center gap-2 shrink-0">
-                            <x-application-logo class="shop-logo fill-current text-[#111]" width="32" height="32" style="width:32px;height:32px;" />
-                            <span class="text-base font-bold text-[#111] hidden sm:block tracking-tight">{{ config('app.name') }}</span>
+                        <a href="{{ route('home') }}" class="flex items-center shrink-0">
+                            <x-application-logo class="text-base font-bold text-[#111] tracking-tight" />
                         </a>
                         <div class="hidden lg:flex items-center gap-6">
                             <a href="{{ route('home') }}" class="text-sm font-medium nav-active">{{ __('Shop') }}</a>

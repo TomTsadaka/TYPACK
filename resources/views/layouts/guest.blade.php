@@ -50,9 +50,8 @@
             </div>
             <div class="flex flex-col items-center">
                 <a href="{{ route('home') }}" class="block transition-transform hover:scale-105 duration-200">
-                    <x-application-logo class="guest-logo w-10 h-10 fill-current text-calm-primary" width="40" height="40" style="max-width:2.5rem;max-height:2.5rem;width:2.5rem;height:2.5rem;" />
+                    <x-application-logo class="text-xl font-bold text-calm-primary" />
                 </a>
-                <span class="mt-2 text-xs font-semibold tracking-wide text-[#78716c] uppercase">{{ config('app.name') }}</span>
             </div>
 
             <div class="guest-card w-full sm:max-w-md mt-10 px-6 py-8 bg-white shadow-store-lg overflow-hidden sm:rounded-store-xl border border-calm-border">
