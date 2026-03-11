@@ -9,9 +9,9 @@
         <span class="text-[#111] font-medium">{{ $product->title }}</span>
     </nav>
 
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
-        {{-- Image gallery --}}
-        <div class="space-y-4">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        {{-- Image gallery: constrained so it's proportional to text --}}
+        <div class="space-y-4 w-full lg:max-w-[360px]">
             <div class="aspect-square rounded-xl overflow-hidden bg-[#f5f5f5] border border-[#eee]">
                 @if($product->featured_image_url)
                     <img id="product-main-img" src="{{ asset($product->featured_image_url) }}" alt="{{ $product->title }}" class="w-full h-full object-cover" />

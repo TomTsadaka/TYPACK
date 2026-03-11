@@ -10,10 +10,10 @@
     itemscope
     itemtype="https://schema.org/Product"
 >
-    {{-- Image container: 4:5 aspect ratio --}}
+    {{-- Image container: 1:1 square, proportional to card --}}
     <a
         href="{{ route('product.show', $product->slug) }}"
-        class="block relative aspect-[4/5] bg-[#f5f5f5] overflow-hidden"
+        class="block relative aspect-square bg-[#f5f5f5] overflow-hidden"
         aria-label="{{ __('View') }}: {{ $product->title }}"
     >
         @if($product->featured_image_url)
